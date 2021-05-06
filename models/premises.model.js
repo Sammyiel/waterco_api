@@ -13,6 +13,10 @@ const Premises = sequelize.define('premises', {
         type: Sequelize.INTEGER,
         allowNull: false
     },
+    route_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    },
     meter_number: {
         type: Sequelize.INTEGER,
         allowNull: false

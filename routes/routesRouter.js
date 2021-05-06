@@ -13,6 +13,6 @@ routesRouter.get("/", viewRoutes);
 routesRouter.put("/:id", updateRoute);
 
 //view premise on route
-routesRouter.get("/:id/premises/", viewPremiseRoute);
+routesRouter.get("/:id", viewPremiseRoute);
 
 export default routesRouter;

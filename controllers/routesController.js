@@ -81,7 +81,7 @@ export async function updateRoute(req, res) {
 //view premise on route
 export async function viewPremiseRoute(req, res) {
     try {
-        let route = await Routes.findAll({ where: { premise_id: req.params.id } });
+        let route = await Routes.findAll({ where: { route_id: req.params.id } });
         if (route) {
             res.json({
                 success: true,
