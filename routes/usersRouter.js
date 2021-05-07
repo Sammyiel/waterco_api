@@ -5,26 +5,26 @@ import { authenticate } from '../middlewares/auth.js';
 const usersRouter = express.Router();
 
 //Add a User - Sign Up - Authenticate.
-usersRouter.post("/", authenticate, addUser);
+usersRouter.post("/", addUser);
 
 //Add a User - Sign In - No need of Authentication
 usersRouter.post("/signin", signIn);
 
 //View a User users/:id - Authenticate.
-usersRouter.get("/:id", authenticate, viewUser);
+usersRouter.get("/:id", viewUser);
 
-usersRouter.get("/email/:email_address", authenticate, viewUserEmail);
+usersRouter.get("/email/:email_address", viewUserEmail);
 
 //View all Users users/ - Authenticate.
-usersRouter.get("/", authenticate, viewAllUsers);
+usersRouter.get("/", viewAllUsers);
 
 // added the following routes
 
 // Edit/update a User
-usersRouter.put("/", authenticate, updateUser);
+usersRouter.put("/", updateUser);
 
 // close/delete a User
-usersRouter.delete("/:id", authenticate, deleteUser);
+usersRouter.delete("/:id", deleteUser);
 
 
 export default usersRouter;
