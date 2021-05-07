@@ -63,6 +63,31 @@ export async function viewUser(req, res) {
     }
 }
 
+// View user by email
+export async function viewUser(req, res) {
+    try {
+        let user = await User.findAll({ where: { email_address: req.params.email_address } });
+        if (user) {
+            res.json({
+                success: true,
+                message: 'User records retrieved successfully',
+                data: user
+            })
+        } else {
+            res.json({
+                success: true,
+                message: 'No User records found.',
+            })
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({
+            success: false,
+            message: "Oopss! Something is wrong..."
+        })
+    }
+}
+
 //View all users
 export async function viewAllUsers(req, res) {
     try {

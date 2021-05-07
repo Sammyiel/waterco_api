@@ -13,6 +13,8 @@ usersRouter.post("/signin", signIn);
 //View a User users/:id - Authenticate.
 usersRouter.get("/:id", viewUser);
 
+usersRouter.get("/email/:email_address", viewUser);
+
 //View all Users users/ - Authenticate.
 usersRouter.get("/", viewAllUsers);
 
