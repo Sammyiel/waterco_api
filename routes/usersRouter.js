@@ -1,5 +1,5 @@
 import express from "express";
-import { addUser, viewAllUsers, viewUser, signIn, updateUser, deleteUser } from '../controllers/usersController.js'
+import { addUser, viewAllUsers, viewUser, signIn, updateUser, deleteUser, viewUserEmail } from '../controllers/usersController.js'
 import { authenticate } from '../middlewares/auth.js';
 
 const usersRouter = express.Router();
@@ -13,7 +13,7 @@ usersRouter.post("/signin", signIn);
 //View a User users/:id - Authenticate.
 usersRouter.get("/:id", viewUser);
 
-usersRouter.get("/email/:email_address", viewUser);
+usersRouter.get("/email/:email_address", viewUserEmail);
 
 //View all Users users/ - Authenticate.
 usersRouter.get("/", viewAllUsers);

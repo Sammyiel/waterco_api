@@ -64,7 +64,7 @@ export async function viewUser(req, res) {
 }
 
 // View user by email
-export async function viewUser(req, res) {
+export async function viewUserEmail(req, res) {
     try {
         let user = await User.findAll({ where: { email_address: req.params.email_address } });
         if (user) {
